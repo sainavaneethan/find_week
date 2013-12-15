@@ -1,4 +1,120 @@
 find_week
 =========
 
-find week
+= Find Week
+
+Find Week  is a library which gives you find_week method on Date and Time 
+class object. It basically extends the Date and Time
+class with several useful date helpers.
+
+== Getting Started
+
+Find Week is released as a Ruby Gem. The gem is to be installed within a Ruby
+or Rails application. To install, simply add the following to your Gemfile:
+
+  gem 'find_week'
+  
+== Usage
+             
+ It returns week split of that date's month
+  
+ Date.new(2012,1,1).week_split
+  
+ => [[1, 2, 3, 4, 5, 6, 7],
+    [8, 9, 10, 11, 12, 13, 14], 
+    [15, 16, 17, 18, 19, 20, 21], 
+    [22, 23, 24, 25, 26, 27, 28], 
+    [29, 30, 31]]
+  
+ It returns month's week in which the date lies
+    
+ Date.new(2012,1,1).find_week
+ => 1
+
+ It return true if date lies in first week of month, else false.
+       
+ Date.new(2012,1,1).first_week?
+ => true
+   
+ It returns true if date lies in second week of month, else false.
+   
+ Date.new(2012,1,9).second_week?
+ => true
+    
+ It returns true if date lies in last week of month, else false.
+  
+ Date.new(2012,1,31).last_week?
+  => true
+  
+ It returns total number of weeks in month.
+  
+ Date.new(2012,1,31).total_weeks
+  => 5
+  
+ It returns month's week in which the date lies
+   
+ Date.new(2012,1,31).find_week_in_eng
+ => "Fifth"
+
+ Date.new(2012,1,31).find_week_in_tamil
+ => "ஐந்து"
+
+ Date.new(2012,1,31).find_week_in_telugu
+ => "అయిదు"
+   
+== Tools Being Used
+
+We believe strongly in not writing code unless we have to, so Week Of Month is built using
+
+Ruby Date Class
+    
+Ruby Time Class
+
+== Version History
+  
+0.0
+  
+Support for Time class
+  
+Methods Added
+
+name_of_week_day, name_of_month, week_end?, working_day?,
+all_sundays_in_month, all_mondays_in_month, all_tuesdays_in_month,
+all_wednesdays_in_month, all_thursdays_in_month, all_fridays_in_month,
+all_saturdays_in_month
+  
+0.0
+  
+ActiveSupport Dependency removed
+  
+Methods Added
+  
+january?, february?, march?, april?, may?, june?, july?,
+august?, september?, october?, november?, december?, last_day_of_month
+  
+== Contributing to Find Week
+
+  Fork, fix, then send me a pull request.
+  
+== Copyright
+
+(The MIT License)
+
+Copyright (c) 2012-2013 Sachin Singh. See LICENSE for details.
+
+Permission is hereby granted, free of charge, to any person obtaining a copy 
+of this software and associated documentation files (the ‘Software’), to deal 
+in the Software without restriction, including without limitation the rights 
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies
+of the Software, and to permit persons to whom the Software is furnished to do so,
+subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all 
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED ‘AS IS’, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, 
+INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A 
+PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT 
+HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION 
+OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE 
+SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
